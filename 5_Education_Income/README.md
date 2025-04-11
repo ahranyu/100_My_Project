@@ -1,32 +1,38 @@
 # Project : Education and income relation
 
-This project is my first project with real data. I got the data from [Educational Attainment and income](https://catalog.data.gov/dataset/ca-educational-attainment-personal-income).
-This table contains age brackets, income range, educational attainment, gender, year. Using python, I explored relations.
+This project is my first project with real-world data. I obtained the dataset from [Educational Attainment and income](https://catalog.data.gov/dataset/ca-educational-attainment-personal-income).
+This dataset contains variables such as age brackets, income range, educational attainment, gender and year. Using python, I explored relationships among these variables.
+
+# Backgroud
+
+I choosed this dataset to explore whether there is correlation between income and educational attainment. This topic has been a  social issue for decades, and the data caught my attantion.
+I wanted to visualize the relationship and see how it changes over the years.
 
 # Questions
 
-Those are I'm interested to explore.
-1. Does educational level affect to income?
-2. Yearly change of educational attainment and income.
-3. Education and income difference between gender.
-4. Age and income difference.
+Here are the key questions I explored:
+
+1. Does educational attainment affect to income?
+2. How have educational attainment and income changed?
+3. What are the difference in income and education between genders?
+4. How does age aggect income?
 
 # Tools I used
 
-- Excel : To start, I used excel to explore NaN data and data categories. For meaningful data, I removed children data from excel.
-- Python:: I used following libraries:
-    - Pandas : To analyze and clean data.
-    - Matplotlib and Seaborn : To visualize data.
-- Visual Studio Code : Excute python and to include Jupyter Notebooks.
-- GitHub : I share my code and visualization on repository
+- **Excel** : Initially used to explore NaN values and understand categories. I also removed children data for meaningful insights.
+- **Python**: I used following libraries:
+    - `Pandas` : For data cleaning and analysis.
+    - `Matplotlib` and `Seaborn` : For data visualization.
+- **Visual Studio Code** : To write and excute python code, including Jupyter Notebooks.
+- **GitHub** : Host and share code and visualizations.
 
-# Data Preparation and Clean
+# Data Preparation & Cleaning
 
-I got the data as CSV file and removed children data for better analysis.
+I obtained the data in CSV format and removed related to children data for better analysis.
 
-## Import libraries & Clean Data
+## Import Libraries & Clean Data
 
-Import necessary libraries and load dataset, then initial data cleaning to better use.
+Loaded the dataset and performed initial cleaning for analysis.
 
 
 ``` python
@@ -67,9 +73,9 @@ deg_sorted= ['No high school diploma','High school or equivalent',
 
 ## 1. Does educational level affect to income?
 
-To find out the relation between educational attainment and income, I summed up the population on the dataset which contains 2008 to 2014. This query will show me how the relation is it.
+To explore the relationship between educational attainment and income, I aggregated the population data from 2008 to 2014. This helps reveal how education level correlates with income distribution.
 
-Check my full code here : [Education and Income](5_Education_Income/1_EDA.ipynb)
+Check my full code here : [Education and Income](1_EDA.ipynb)
 
 
 
@@ -86,21 +92,23 @@ plt.ylabel('Popluation')
 plt.gca().yaxis.set_major_formatter(FuncFormatter(lambda x, pos : f'{(x/1000000):.1f}M'))
 
 ```
+### Result
 
-![result](FIXTHIs: income and education pop)
+![Total population by Educational attainment](image/Income_and_education_pop.png)
 
-*line chart income range and population by educational attainment.*
+*Line chart showing income range and population by educational attainment.*
+
 ### Insights:
 
-!!!!!FIX TJISTSIS
+- Above $50k+ income range, there is a noticeable spike of Bachelor's degree or higher group, indicating that higher education will be able to return higher salary.
 
 
 
 ## 2. Yearly change of educational attainment and income.
 
-How does population had changed from 2008 to 2014? I will explore the yearly population by educational attainment and income range. 
+How population distribution had changed from 2008 to 2014? I will explore the yearly population by educational attainment and income range. 
 
-Check my full code here : [Yearly change of Education and Income](5_Education_Income/2_Education_level_and_Income.ipynb)
+Check my full code here : [Yearly change of Education and Income](2_Education_level_and_Income.ipynb)
 
 
 
@@ -116,10 +124,11 @@ plt.ylabel('Population')
 plt.gca().yaxis.set_major_formatter(FuncFormatter(lambda x, pos : f'{float(x/1000000):.1f}M'))
 
 ```
+### Result
 
-![result](FIXTHIs:Yearly distribution of education level)
+![Yearly distribution of education level](image\Yearly_distribution_of_education_level.png)
 
-*line chart Yearly distribution of education level.*
+*Yearly population by education level.*
 
 
 ```python
@@ -138,23 +147,24 @@ plt.legend(title='Income ($)',loc='upper right', bbox_to_anchor=(1.25, 1))
 plt.gca().yaxis.set_major_formatter(FuncFormatter(lambda x, pos : f'{float(x/1000000):.1f}M'))
 
 ```
+### Result
 
-![result](FIXTHIs: Yearly population of income range)
+![Yearly population of income range](image\Yearly_population_of_income_range.png)
 
-*line chart Yearly population of income range.*
+*Yearly population of income range.*
 
 
 ### Insights:
 
-!!!!!FIX TJISTSIS
+- Population of $0 income and  $75k+ income both increased. 
+- By 2014, more people had achieved higher educational attainment.
 
 
+## 3. Differences in education and income by gender.
 
-## 3. Education and income difference between gender.
+To compare income and education attainment between genders, I  first analyzed population distribution, then visualized the diferences.
 
-To find out the difference between gender, I did looked up the distrubution first. Then I visualized the data to compare income distribution.
-
-Check my full code here : [Gender and Income](5_Education_Income/3_Gender_Income.ipynb)
+Check my full code here : [Gender and Income](3_Gender_Income.ipynb)
 
 
 
@@ -176,24 +186,27 @@ plt.show()
 
 
 ```
-![result](FIXTHIs: Education rate between Gender)
 
-*Pie chart to see if there is educational difference.*
+### Result
+
+![Education rate between Gender](image\Education_rate_between_Gender.png)
+
+*Pie chart showing the gender distribution across educational levels.*
 
 
+![Total income distribution 2008-2014](image\Total_income_distribution_2008-2014.png)
 
-![result](FIXTHIs: E"Total income distribution 2008-2014)
+*Income distribution by gender*
 
-*Pie chart to see if there is educational difference.*
 ### Insights:
+- Education levels are fairly similar between males and females.
+- From 2008 to 2014, most females were in the $0 income group, while most males were in the $75k+ income group.
+- For both genders, the second most common income range was $15k-25k.
 
-!!!!!FIX TJISTSIS
+## 4. Income differences by age.
+I excluded under-18 population to use validated data.
 
-
-## 4. Age and income difference.
-To look up if there is income difference by age bracket. I removed under 18 bracket to use validated data.
-
-Check my full code here : [Education and Income](5_Education_Income/4_Age.ipynb)
+Check my full code here : [Education and Income](4_Age.ipynb)
 
 ```python
 df_1880_pie = df_1880.groupby('Educational Attainment')['Population Count'].sum().to_frame().reindex(deg_sorted)
@@ -202,9 +215,9 @@ plt.title("Age over 17 Education distribution")
 plt.show()
 
 ```
-![result](FIXTHIs: Age over 17 Education distribution)
+![Age over 17 Education distribution](image\Age_over_17_Education_distribution.png)
 
-*line chart income range and population by educational attainment.*
+*Pie chart showing educational attainment among individuals aged 18+.*
 
 
 ```python
@@ -220,9 +233,43 @@ plt.xlabel('Income ($)')
 plt.show()
 ```
 
-![result](FIXTHIs: income and education pop)
+### Result
 
-*line chart income range and population by educational attainment.*
+![Age over 17 income range by educational attainment](image\Age_over_17_income_range_by_educationa_attainment.png)
+
+*line chart showing income range and population by educational attainment.*
 ### Insights:
 
-!!!!!FIX TJISTSIS
+- Over 80% of population have at least high school diploma.
+- Not only Bachelor's degree or higher group has most population in $75k+, but also less distribution in $0 income range.
+
+
+# What I learnd
+Performing this project taught me more knowledge of python libraries and how to visualize effectively.
+
+- Python : Utilizing libraries such as Pandas, Seaborn and Matplotlib for major data manipulation and visualization. I tried several new functions and methods to conduct better visualization.
+
+- Data Cleaning : I started with Excel for initial data inspection and cleanup, I found that excel is very efficient to identify missing or invalid values.
+
+- Data Exploration Strategy : This is my first project with real-world data and I learned the omportance of planning which variables and relationships to explore. 
+
+
+# Insights
+
+This project revealed several general insights the correlation between educational attainment and income range.
+
+- There are more people who has higher degree compare to 2008
+- There is significant relation that higher degree makes more income.
+- Male and female has similar distribution of educational attainment, however, many male population makes $75+ income while many female population makes $0 income.
+
+
+# Challenges I Faced
+
+- Data manipulation : Since it is my first real data manipulation, handling NaN values and excluding unrelated data required careful consideration.
+- Complex Data Visualization : There are many choises for visualization and designing effective visual representation was key and also challenge. I ploted different type of chart and able to manage most effective visualization.
+- Data correlation : Deciding how deeply investigate each analysis while discovering main data correlation.
+
+
+# Conclusion
+
+The data provide clear correlation between educational attainment and income, higher degree makes more income and more people has achieved higher degree. 
