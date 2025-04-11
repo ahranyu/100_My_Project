@@ -15,7 +15,7 @@ Here are the key questions I explored:
 1. Does educational attainment affect to income?
 2. How have educational attainment and income changed?
 3. What are the difference in income and education between genders?
-4. How does age aggect income?
+4. How does age affect income?
 
 # Tools I used
 
@@ -126,7 +126,7 @@ plt.gca().yaxis.set_major_formatter(FuncFormatter(lambda x, pos : f'{float(x/100
 ```
 ### Result
 
-![Yearly distribution of education level](image\Yearly_distribution_of_education_level.png)
+![Yearly distribution of education level](image/Yearly_distribution_of_education_level.png)
 
 *Yearly population by education level.*
 
@@ -149,7 +149,7 @@ plt.gca().yaxis.set_major_formatter(FuncFormatter(lambda x, pos : f'{float(x/100
 ```
 ### Result
 
-![Yearly population of income range](image\Yearly_population_of_income_range.png)
+![Yearly population of income range](image/Yearly_population_of_income_range.png)
 
 *Yearly population of income range.*
 
@@ -189,12 +189,12 @@ plt.show()
 
 ### Result
 
-![Education rate between Gender](image\Education_rate_between_Gender.png)
+![Education rate between Gender](image/Education_rate_between_Gender.png)
 
 *Pie chart showing the gender distribution across educational levels.*
 
 
-![Total income distribution 2008-2014](image\Total_income_distribution_2008-2014.png)
+![Total income distribution 2008-2014](image/Total_income_distribution_2008-2014.png)
 
 *Income distribution by gender*
 
@@ -215,7 +215,7 @@ plt.title("Age over 17 Education distribution")
 plt.show()
 
 ```
-![Age over 17 Education distribution](image\Age_over_17_Education_distribution.png)
+![Age over 17 Education distribution](image/Age_over_17_Education_distribution.png)
 
 *Pie chart showing educational attainment among individuals aged 18+.*
 
@@ -235,7 +235,7 @@ plt.show()
 
 ### Result
 
-![Age over 17 income range by educational attainment](image\Age_over_17_income_range_by_educationa_attainment.png)
+![Age over 17 income range by educational attainment](image/Age_over_17_income_range_by_educationa_attainment.png)
 
 *line chart showing income range and population by educational attainment.*
 ### Insights:
@@ -244,14 +244,14 @@ plt.show()
 - Not only Bachelor's degree or higher group has most population in $75k+, but also less distribution in $0 income range.
 
 
-# What I learnd
+# What I learned
 Performing this project taught me more knowledge of python libraries and how to visualize effectively.
 
-- Python : Utilizing libraries such as Pandas, Seaborn and Matplotlib for major data manipulation and visualization. I tried several new functions and methods to conduct better visualization.
+- Python : Utilizing libraries such as Pandas, Seaborn and Matplotlib for major data manipulation and       visualization. I tried several new functions and methods to conduct better visualization.
 
 - Data Cleaning : I started with Excel for initial data inspection and cleanup, I found that excel is very efficient to identify missing or invalid values.
 
-- Data Exploration Strategy : This is my first project with real-world data and I learned the omportance of planning which variables and relationships to explore. 
+- Data Exploration Strategy : This is my first project with real-world data and I learned the importance of planning which variables and relationships to explore. 
 
 
 # Insights
