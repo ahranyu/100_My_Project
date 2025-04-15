@@ -1,49 +1,59 @@
 # Project 2 : UK Job posting from Glassdoor 2024
 
-Welcome to my second project. I obtained the dataset from [UK data job 2024 glassdoor](https://www.kaggle.com/datasets/arjunxyz/data-science-jobs-2024-glassdoor-uk).
-This dataset contains variables such as job title, company name, salary, employee size, revenue, location, industry. Using excel, SQL, python, I explored relationships among these variables.
+Welcome to my second data project. I obtained data job postings from [UK data job 2024 glassdoor](https://www.kaggle.com/datasets/arjunxyz/data-science-jobs-2024-glassdoor-uk).
+This dataset includes variables such as job title, company name, salary, employee size, revenue, location, industry and more. 
+Using excel, SQL and python, I explored key relationships and trends in the job market for data professionals in the UK.
 
 # Backgroud
 
-I choosed this dataset to explore UK data job situation. This analysis will help to find data job in UK, such as industry and salary. Also I'd like to see which skill is most demanded.
+I chose this dataset to explore data job market in the UK. This analysis will help to identify:
+- Industries that offering higher salary.
+- Most demanded skills.
 
 # Questions
 
 Here are the key questions I explored:
 
-1. EDA
+1. Exploratory Data Analysis (EDA)
     1) Salary by Job title
     2) Salary by Industry
-    3) Salary by Employee size
+    3) Salary by Company size (employee count)
     4) Salary by Company Revenue
 
-2. Narrow down for 7 most posted data job:
+2. Dive into 7 most common data job titles:
     - Most required skills
-    - Required skills and salary
+    - Relationship between required skills and salary
     - Company Rating vs Salary by job title
 
-3. How about Data Analyst job only?
-    - Required skills and salary
-    - Job posting count and Salary by Industry as DA
+3. Focus on Data Analyst Roles
+    - Required skills and average salary
+    - Industry counts and salaries
 
 # Tools I used
 
-- **Excel** : Initially used to explore NaN values and understand categories. The dataset contains invalide text, so first I did change to unicode, then I removed job describtion and founded year.Also I cleaned text data for better visualization.
-- **PostgreSQL**: I used SQL to pull out the job titles that I want to explore. To do so, I create dataset and table, copy data from excel and created new column 'cleaned_job_title'. Also removed other job titles.
-- **Python**: I used following libraries:
+- **Excel** : Initial data exploration, fixing encoding issue, removed irrelevant columns, and performed basic data cleaning for better visualization.
+- **PostgreSQL**: I used SQL to filter and clean the job titles that I want to explore. I create a cleaned table and extracted dataset for analysis.
+- **Python** (Jupyter Notebook/ VS Code): I used following libraries:
     - `Pandas` : For data cleaning and analysis.
     - `Matplotlib` and `Seaborn` : For data visualization.
-- **Visual Studio Code** : To write and excute python code, including Jupyter Notebooks. Also I used postgresql in VS code.
+- **Visual Studio Code** : Main environmnet for writing and excuting python code, postgresql.
 - **GitHub** : Host and share code and visualizations.
 
 # Data Preparation & Cleaning
 
-I obtained the data in CSV format and fixed unicode and operated initial clean on Postgresql to take out the job titles.
+I obtained the data in CSV format.
+Initial cleaning :
+    - Fixing unicode error
+    - Removing unnecessary columns
+    - Filtering out job title
+    - Drop rows that doen't have salary data
+    - Standardizing salary (*hourly -> yearly by multipulating 1950 hours*)
+
+
 
 ## Import Libraries & Clean Data
 
-Loaded the dataset and performed initial cleaning for analysis. Such as salary adjustment and drop NaN values.
-
+Loaded the dataset and performed initial cleaning for analysis. 
 
 ``` python
 import pandas as pd
@@ -73,16 +83,9 @@ df['salary']=df['salary'].apply(make_year)
 # Analysis
 
 ## 1. EDA
-    1) Salary by Job title
-    2) Salary by Industry
-    3) Salary by Employee size
-    4) Salary by Company Revenue
-
-I wanted to look up average salary of data jobs by variables.
+### 1) Salary by Job title
 
 Check my full code here : [EDA for data jobs](6_EDA.ipynb)
-
-### 1) Salary by Job title
 
 ```python
 
@@ -99,27 +102,25 @@ plt.show()
 ```
 ### Result
 
-![Avg salary for data jobs in UK](image/Avg_salary_for_data_ jobs_in_UK.png)
+![Avg salary for data jobs in UK](image/Avg_salary_for_data_jobs_in_UK.png)
 
 *Bar chart showing average salary of data jobs.*
 
 ### Insights:
 
-- Data jobs in UK get more than £40K and software engineers are get higher pay compare to data jobs.
+- Most data jobs in the UK offer salaries above £40K.
+- Software engineer roles tend to get payed more than data jobs.
 
 
 
+## 2. Top 7 most posted data job:
 
-## 2. Narrow down for 7 most posted data job:
-    - Most required skills
-    - Required skills and salary
-    - Company Rating vs Salary by job title
+- Skill Demand and salary
 
-By job title, I wanted to explore 7 most posted job in depth.
+Explore 7 most posted job in depth.
+
 Check my full code here : [Top 7 jobs analysis](7_top7_jobs.ipynb)
 
-
-- Required skills and salary
 
 ```python
 top_7 = list(df.groupby(['cleaned_job_title'])['salary'].count().sort_values(ascending=False).head(7).index)
@@ -165,19 +166,17 @@ plt.show()
 
 ### Insights:
 
-- SQL is most demanded skill, as more than 22% of job posting requires, however it is not the highest paying skill.
-- Also they require to have communication skill.
+- SQL is most in-demand skill, required in over 22% of job postings, however it is not the highest paying skill.
+- Also communication skills are frequently mentioned.
+- Higher paying skills include Python, AWS, Machine Learning.
 
 
-## 3. How about Data Analyst job only?
-    - Required skills and salary
-    - Job posting count and Salary by Industry as DA
-
-Look up dataset of Data Analyst.
+## 3. Focus on Data Anlayst Roles
+    
 
 Check my full code here : [DA Analysis](8_DA_analysis.ipynb)
 
-
+- Skill demand and salary
 
 ```python
 sns.scatterplot(data=df_DA_skills_sal,y='percent', x='avg_salary')
@@ -198,8 +197,6 @@ plt.tight_layout()
 plt.show()
 
 
-
-
 ```
 
 ### Result
@@ -211,38 +208,43 @@ plt.show()
 
 
 ### Insights:
-- As Data Analyst, SQL, Excel, Power BI are most required.
+- As a Data Analyst, the top required skills are SQL, Excel and Power BI.
+- Programming languages like Python and R appear less often but they are slightly high payed skills.
+
 
 
 # What I learned
-I learned about data job in Uk such as required skills and popular industry. Also I learned PostgreSQL to clean string data.
+I learned about data job in the Uk such as required skills and popular industry. Also I experienced to use PostgreSQL to clean string data and extraction.
 
-- PostgreSQL : Starting from builing database and creat table to clean the job title columns, I found it is easy to clean string data and take out only data that I want.
+- PostgreSQL : From builing database and creat table to clean the job title columns, I found it is effective to filter data.
 
 - Python : Utilizing libraries such as Pandas, Seaborn and Matplotlib for major data manipulation and visualization. I tried scatter plot to show 2 numeric datas and placed name in the chart.
 
-- Data Cleaning : I started with Excel for initial data inspection and cleanup, then I copyed the data to SQL. In SQL, I cleaned string data to pull out the title that I want.
+- Data Cleaning : I started with Excel for initial data inspection and cleanup, then deeper filtering in SQL, and finally used python for the main analysis.
 
-- Data Exploration Strategy : As I learned from first project, this time I planed explorations. Following my plan and also added a few analysis that I found intresting. 
+- Data Exploration Strategy : As I learned from first project, this time I planed explorations. As following my plan and also added a few analysis that I found intresting. 
 
 
 # Insights
 
-This project revealed usuful information of data jobs in UK. 
+This project revealed useful information of data jobs in the UK. 
 
-- Data jobs in UK get more than £40K and software engineers are get higher pay compare to data jobs.
-- SQL is most demanded skill, as more than 22% of job posting requires, however it is not the highest paying skill.
-- Also they require to have communication skill.
-- As Data Analyst, SQL, Excel, Power BI are most required.
-
+- Data professionals in the UK generally earn more than £40K, and software engineers tend to get higher pay compare to data jobs.
+- SQL is the most in-demand skill, as more than 22% of job posting requires.
+- For Data Analyst roles, SQL, Excel and Power BI are commonly required.
+- Communication skill is also frequently mentioned.
 
 # Challenges I Faced
 
-- Data cleaning : Using SQL to clean up string data, need to make sure every data that I want was pulled 
-- Complex Data Visualization : Tried scatter plot and to ensure easy to see the analysis, I need to narrow down data. Also pay attantion to visualization.
-- Data correlation : To correct correlation, I performed count function to check if there is enough data to manipulate. 
-
+- Data cleaning : When filtering data using SQL, I had to ensure that the desired data was correctly selected and cleaned. 
+- Complex Data Visualization : It was important to narrow down the data to create clear and readable scatter plots.
+- Data correlation : I used `count()` function to comfirm that there was a sufficient amount of data for valid correlation and analysis.
 
 # Conclusion
 
-The analysis provide idea of salay by job title and which skills to learn. Additionally able to look up by industry of job. 
+The analysis provide valuable insights of job market in the UK. 
+I was able to :
+    - Analyze salary differences by job role, industry, and company size.
+    - Identify top in-demand skills and examine their correlation with salary.
+
+Through this project, I significantly improved my skills in SQL and visualization. Also the analysis shows a better picture of current job market in the UK.
