@@ -15,10 +15,10 @@ I chose this dataset to explore data job market in the UK. This analysis will he
 Here are the key questions I explored:
 
 1. Exploratory Data Analysis (EDA)
-    1) Salary by Job title
-    2) Salary by Industry
-    3) Salary by Company size (employee count)
-    4) Salary by Company Revenue
+    1. Salary by Job title
+    2. Salary by Industry
+    3. Salary by Company size (employee count)
+    4. Salary by Company Revenue
 
 2. Dive into 7 most common data job titles:
     - Most required skills
