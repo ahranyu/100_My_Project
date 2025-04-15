@@ -14,20 +14,20 @@ I chose this dataset to explore data job market in the UK. This analysis will he
 
 Here are the key questions I explored:
 
-1. Exploratory Data Analysis (EDA)
-    1. Salary by Job title
-    2. Salary by Industry
-    3. Salary by Company size (employee count)
-    4. Salary by Company Revenue
+#### 1. Exploratory Data Analysis (EDA)
+  1. Salary by Job title
+  2. Salary by Industry
+  3. Salary by Company size (employee count)
+  4. Salary by Company Revenue
 
-2. Dive into 7 most common data job titles:
-    - Most required skills
-    - Relationship between required skills and salary
-    - Company Rating vs Salary by job title
+#### 2. Dive into 7 most common data job titles:
+   - Most required skills
+   - Relationship between required skills and salary
+   - Company Rating vs Salary by job title
 
-3. Focus on Data Analyst Roles
-    - Required skills and average salary
-    - Industry counts and salaries
+#### 3. Focus on Data Analyst Roles
+   - Required skills and average salary
+   - Industry counts and salaries
 
 # Tools I used
 
@@ -41,13 +41,12 @@ Here are the key questions I explored:
 
 # Data Preparation & Cleaning
 
-I obtained the data in CSV format.
 Initial cleaning :
-    - Fixing unicode error
-    - Removing unnecessary columns
-    - Filtering out job title
-    - Drop rows that doen't have salary data
-    - Standardizing salary (*hourly -> yearly by multipulating 1950 hours*)
+   - Fixing unicode error
+   - Removing unnecessary columns
+   - Filtering out job title
+   - Drop rows that doen't have salary data
+   - Standardizing salary (*hourly -> yearly by multipulating 1950 hours*)
 
 
 
@@ -115,9 +114,9 @@ plt.show()
 
 ## 2. Top 7 most posted data job:
 
-- Skill Demand and salary
 
-Explore 7 most posted job in depth.
+
+Explore skill demand and salary for 7 most posted job.
 
 Check my full code here : [Top 7 jobs analysis](7_top7_jobs.ipynb)
 
@@ -216,13 +215,13 @@ plt.show()
 # What I learned
 I learned about data job in the Uk such as required skills and popular industry. Also I experienced to use PostgreSQL to clean string data and extraction.
 
-- PostgreSQL : From builing database and creat table to clean the job title columns, I found it is effective to filter data.
+- **PostgreSQL** : From builing database and creat table to clean the job title columns, I found it is effective to filter data.
 
-- Python : Utilizing libraries such as Pandas, Seaborn and Matplotlib for major data manipulation and visualization. I tried scatter plot to show 2 numeric datas and placed name in the chart.
+- **Python** : Utilizing libraries such as Pandas, Seaborn and Matplotlib for major data manipulation and visualization. I tried scatter plot to show 2 numeric datas and placed name in the chart.
 
-- Data Cleaning : I started with Excel for initial data inspection and cleanup, then deeper filtering in SQL, and finally used python for the main analysis.
+- **Data Cleaning** : I started with Excel for initial data inspection and cleanup, then deeper filtering in SQL, and finally used python for the main analysis.
 
-- Data Exploration Strategy : As I learned from first project, this time I planed explorations. As following my plan and also added a few analysis that I found intresting. 
+- **Data Exploration Strategy** : As I learned from first project, this time I planed explorations. As following my plan and also added a few analysis that I found intresting. 
 
 
 # Insights
@@ -236,15 +235,16 @@ This project revealed useful information of data jobs in the UK.
 
 # Challenges I Faced
 
-- Data cleaning : When filtering data using SQL, I had to ensure that the desired data was correctly selected and cleaned. 
-- Complex Data Visualization : It was important to narrow down the data to create clear and readable scatter plots.
-- Data correlation : I used `count()` function to comfirm that there was a sufficient amount of data for valid correlation and analysis.
+- **Data cleaning** : When filtering data using SQL, I had to ensure that the desired data was correctly selected and cleaned. 
+- **Complex Data Visualization** : It was important to narrow down the data to create clear and readable scatter plots.
+- **Data correlation** : I used `count()` function to comfirm that there was a sufficient amount of data for valid correlation and analysis.
 
 # Conclusion
 
-The analysis provide valuable insights of job market in the UK. 
+The analysis provide valuable insights of job market in the UK.
+
 I was able to :
-    - Analyze salary differences by job role, industry, and company size.
-    - Identify top in-demand skills and examine their correlation with salary.
+  - Analyze salary differences by job role, industry, and company size.
+  - Identify top in-demand skills and examine their correlation with salary.
 
 Through this project, I significantly improved my skills in SQL and visualization. Also the analysis shows a better picture of current job market in the UK.
