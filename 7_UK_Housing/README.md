@@ -3,7 +3,10 @@
 ## Overview
 
 This analysis focuses on housing price in Manchester. 
-The dataset was obtained from [kaggle](https://www.kaggle.com/datasets/kwewqaweae/uk-room-prices), sourced from Spareroom, as of 2023-04-16.
+
+The dataset was obtained from [kaggle](https://www.kaggle.com/datasets/kwewqaweae/uk-room-prices),
+ sourced from Spareroom, as of 2023-04-16.
+
 In this project, I used Excel, SQL, Python and explored relationships between variables.
 
 ## Questions to Answer : Manchester Rent
@@ -19,18 +22,22 @@ In this project, I used Excel, SQL, Python and explored relationships between va
 ## Clean up Dataset
 
 **EXCEL:**
-    - Cleaned strings and removed invalid data
+- Cleaned strings and removed invalid data
+
 **SQL:**
-    - Changed weekly rent to monthly rent price by multiple 4.33
-    - Created View containing only Manchester data and exported it as a `csv` file
+- Changed weekly rent to monthly rent price by multiple 4.33
+- Created View containing only Manchester data and exported it as a `csv` file
 
 ## Analysis Approach
 
 Created [Manchester rent](Manchester_Rent.csv) to show only Manchester data using SQL.
 
 Check my full code here : 
+
 [Create table](0_create_table.sql)
+
 [Data cleaning](1_data_cleaning.sql)
+
 [Manchester rent](2_view_manchester.sql)
 
 ### 0. Dashboard
@@ -134,7 +141,7 @@ ORDER BY area_count DESC
 - M14 (Fallowfield) area has 120 postings
 
 
-### -- 5. Gender preference in housing?
+###  5. Gender preference in housing?
 
 ``` sql
  SELECT 
