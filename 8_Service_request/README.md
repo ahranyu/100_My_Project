@@ -1,7 +1,7 @@
 # Project 4 : Seattle customer service request analysis
 
 ## Overview
-In this project, I will analyze Seattle service request from 2021 to current date(2025).
+In this project, I analyze Seattle service requests from 2021 to the present(2025).
 
 The dataset resource is [here](https://catalog.data.gov/dataset/customer-service-requests). 
 
@@ -9,14 +9,14 @@ I used Python to explore relationships between variables.
 
 ## Questions to Answer
 
-1. What are most requested services?
-2. Service request distribution by Zip code
-3. What are yearly trend of service requests?
-4. Which methods are commonly used by citizen?
-5. What are the status of progress?
+1. What are the most requested services?
+2. How is service request distribution by Zip code?
+3. What are the yearly trends in service requests?
+4. Which methods are most commonly used by citizens?
+5. What is the status of progress?
 ## Analysis Approach
-#### Import libraries and Clean data
-Loaded the dataset and performed initial cleaning for analysis.
+#### Import Libraries and Clean Data
+I loaded the dataset and performed initial cleaning for analysis.
 
 ```python
 import pandas as pd
@@ -38,8 +38,8 @@ df.loc[:,'date'] =pd.to_datetime(df['Created Date'])
 ```
 
 
-### 1. What are most requested services?
-- As beginning of analysis, I chose to explore which service has been most requested. I created DataFrame with `Service Request Type` and `Service Request Number` and calculated distribution as percentage, limited top 5 type and visualized with horizontal bar chart.
+### 1. What are the most requested services?
+- To begin the analysis, I explored which service were most frequently requested. I created a DataFrame grouped by `Service Request Type`, calculated the distribution as percentage, limited the data to the top 5 types and visualized it using a horizontal bar chart.
 
 Check my full code  [here](0_Intro.ipynb)
 
@@ -67,11 +67,11 @@ plt.show()
 
 **Insight:**
 
-In Seattle there is lots of issues with parking. 
-As 'Abandoned Vehicle/ 72hr Parking Ordinance'and 'Parking Enforcement' implying that citizen reports long-term and short-term parking issues.
+Seattle receives many parking-related complaints. 
+Services like 'Abandoned Vehicle/ 72hr Parking Ordinance'and 'Parking Enforcement' indicate that citizens report both long-term and short-term parking issues.
 
-### 2. Service request distribution by Zip code
-- Look up deeper service requests by zip code, to know about what kind of issues are most problematic per zip code. To show as a map I used GeoJSOn file and also imported `Plotly` library.
+### 2. Service Request Distribution by Zip Code
+- To understand geographic distribution, I analyzed service request counts by zip code and show as a map with `Plotly` library.
 
 Check my full code  [here](1_Zip_code.ipynb)
 
@@ -116,8 +116,8 @@ fig.show()
 **Insight:**
 
 
-### 3. What are yearly trend of service requests? 
-- To see yearly trend of service request, I organized dataset as YYYY-MM, then showed as line chart. To remove noise and smoother visualization, I applied rolling method.
+### 3. What are the yearly trends of service requests? 
+- To view trends over time, I aggregated the dataset by YYYY-MM, then removed noise and smoothed visualization by applying rolling window.
 
 Check my full code  [here](2_Yearly_trend.ipynb)
 
@@ -151,12 +151,12 @@ plt.show()
 
 **insight:**
 
-- Unauthorized Encampment are serging since middle of 2022 and it is almost top request in 2025.
-- Parking issues are increasing, especially long-term parking has been over double amount in 2025.
+- Unauthorized Encampments have surged since mid-2022 and became top request in 2025.
+- Parking-related issues have doubled since 2021, especially long-term parking complaints.
 
-**Business Insights**
-### 4. Which methods are commonly used by citizen? 
-- Count each method that used for report, preserving top 4 methods and group rest of them as 'Other methods'
+
+### 4. Which methods are most commonly used by citizens? 
+- I counted the number of requests by method. Preserving top 4 methods and grouped rest of them as 'Other methods'.
 Check my full code  [here](3_Method.ipynb)
 
 ```python
@@ -172,9 +172,10 @@ df_method = df_method.drop(df_method.index[4:-1])
 
 **Insight:**
 
-- Majority of report are made through Find It Fix It apps, then following Citizen Web Intake app.
+- Majority of reports are submitted through the **Find It Fix It app**, followed by the **Citizen Web Intake app**.
+
 ### 5. What are the status of progress? 
-- 
+- I analyzed the progress of service requests using a stacked horizontal bar chart to display the distribution of status by service type. 
 
 ```python
 
@@ -212,30 +213,34 @@ plt.show()
 
 **Insight:**
 
-Graffiti has most new status, and short-term parking issue is following. Long-term parking issue and Illegal dumping/needles issue has been almost addressed
+- Graffiti has the highest proportion of New status, followed by short-term parking issues.
+- Long-term parking and Illegal Dumping/Needles issues have mostly been addressed.
 
 
 ## Insight
 
-1. Seattle has been reported with parking issues.
-2. Many of requests are addressed.
-3. Unauthorized Encampment are rising in zip code : 98107
-4. There are almost double amount of service request in current days compare to 2021
+1. Parking-related issues are the most frequently reported in Seattle.
+2. A majority of requests are addressed.
+3. Unauthorized Encampment are on the rise,especially in zip code 98107.
+4. The total number of service requests has nearly doubled compared to 2021
 
 ## Technical Details
 - **Python:** I used following libraries :
     - `Pandas` : To clean and analyze data
-    - `Matplotlib` and `Seaborn` : To visualize data
-    - `Plotly` : Show analysis as a map 
+    - `Matplotlib` and `Seaborn` : Data visualization
+    - `Plotly` : Display analysis as a map 
 
 
 
 ## Challenges I Faced and What I Learned 
-- Field Knowledge : The dataset is showing the request of Seattle citizen. To deal with the dataset, I have to think as one of the citizens and what would be concern for them. I learned there are lots of parking issue through out Seattle and also unautorized emcampment also became bigger problem. Also I can assume that many of requests are addressed.
+- **Understanding Local Context :**
+ The dataset is the concerns of Seattle citizens. To analyze it successfully, I had to consider the perspective of the citizens and what issues would be matter to them. I learned that parking problems are through out Seattle, and also unauthorized encampments have become a bigger problem. Also I can assume that many of requests are addressed.
 
-- Map visualization : To show distribution per zip code, I used map. In this visualization, I learned that I have to limit data to prevent from making overwhelming chart. Performing this project provided me complex visualization skill using `Plotly` especially `cholorethely_map`.
+- **Map Visualization :**
+ To show the distribution by zip code, I used a map. In this visualization, I learned the importance of limiting the amount of data to avoid overwhelming the visualization. Performing this project helped me complex visualization skills using `Plotly`, especially with the `choropleth_map` function.
 
-- Dataset update : This data contains `Status`, however it doesn't contain closed date or other status update. To handle Status of service request, there was no clear data to manipulate. 
+- **Data Limitations :** 
+While the dataset includes a `Status` field, it doesn't contain closed dates or other detailed status update. This made it difficult to track service request resolution over time. Without closed dates, I couldn't fully analyze the timely efficiency. This taught me the process of acquiring data is a very important step in completing an analysis.
 
-- Meaningful Insight : I could look up more relationship between variables or deeper in particular variables. However, my goal should be stay as find out meaningful insight, thus knowing the data that can provide me useful analysis was crucial. To address this, I realized that I have to set my goal more precisely and decide if I can dig in deeper.
-
+- **Extracting Meaningful Insight :** 
+I have explored more relationships between variables or deeper in particular variables. However, I realized the importance of staying focused on finding meaningful insight. I learned that understanding the dataset's strengths and limitations will provide me clearer goals and more appropriate analysis.
