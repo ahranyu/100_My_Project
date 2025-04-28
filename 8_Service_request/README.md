@@ -147,7 +147,7 @@ plt.show()
 
 **Visualization:**
 
-![Yearly trend of Top 5 Service request](image\yearly_trend.png)
+![Yearly trend of Top 5 Service request](image/yearly_trend.png)
 
 **insight:**
 
@@ -168,7 +168,7 @@ df_method = df_method.drop(df_method.index[4:-1])
 
 **Visualization:**
 
-![Methods to Report](image\method.png)
+![Methods to Report](image/method.png)
 
 **Insight:**
 
@@ -209,7 +209,7 @@ plt.show()
 
 **Visualization:**
 
-![Progress Distribution by Service Type](image\status.png)
+![Progress Distribution by Service Type](image/status.png)
 
 **Insight:**
 
