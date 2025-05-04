@@ -63,7 +63,10 @@ ORDER BY COUNT(genre_explode) DESC;
 ```
 
 **Visualization:**
+
 ![Number of Top 10 Genre Movies](image/top10.png)
+
+A horizontal bar chart with number of movies per genre.
 
 **Insight :**
 
@@ -98,7 +101,9 @@ GROUP BY runtime_min
 ```
 
 **Visualization:**
+
 ![Average Rating and Runtime](image/raterun.png)
+
 This chart shows the average rating by runtime, from 60 to 180 minutes.
 
 **Insight :**
@@ -129,7 +134,10 @@ GROUP BY start_year;
 ```
 
 **Visualization:**
+
 ![Rating Trend over the years](image/ratetrend.png)
+
+Average rating of movies by year.
 
 **Insight :**
 
@@ -164,7 +172,9 @@ ORDER BY genre_explode, start_year
 ```
 
 **Visualization:**
+
 ![Trend of Top 5 Genre movie Numbers](image/top5number.png)
+
 Top 5 genre's trend over the years. 
 
 **Insight :**
@@ -208,7 +218,9 @@ LIMIT 50;
 ```
 
 **Result:**
+
 ![Top 50 Directors by Rating](image/topdirec.png)
+
 Display the average rating of their movies and director name.
 
 **Insight :**
@@ -221,6 +233,7 @@ For current directors, both 'Christopher Nolan' and 'Haruo Sotozaki' have averag
 Find out how may actors have also worked as directors?
 
 **Methodology :**
+
 Filter for professions that include actor or director then counted the number of people with those professions.
 
 Check my full code [10_Actors](10_Actors.sql)
@@ -239,7 +252,10 @@ WHERE (profession LIKE '%actor%' OR profession LIKE '%actress%') AND (profession
 
 ```
 **Visualization:**
+
 ![Distribution of Actor-Director](image/actdirec.png)
+
+Pie chart of Actor-Director distribution.
 
 **Insight :**
 
@@ -265,15 +281,21 @@ Queries on large datasets could take minutes to process, and cleaning the data b
 	- These days, the ratings are continuously going down, viewers are likely have higher standards compare to the past.
 	- Drama is the most popular genre, however Documentary genre is also becoming popular.
 - Analysis Skills :
-	1. I deepened my SQL skills, such as choosing the appropriate `JOIN` function and unnesting lists to strings.
-	2. Using `Psycopg2`, I learned how to bring SQL queries into JupyterNotebook and plot charts using python.
-	3. Along with `JOIN` clause, creating efficient CTEs can make a significant difference in query time and readability. 
-	4. Skewed Dataset : This datasets are large enough to see skew, and it is right-skewed dataset. I realized that confirming if the dataset is skewed at the beginning of the analysis helps in choosing the correct statical functions to use.
+1. I deepened my SQL skills, such as choosing the appropriate `JOIN` function and unnesting lists to strings.
+2. Using `Psycopg2`, I learned how to bring SQL queries into JupyterNotebook and plot charts using python.
+3. Along with `JOIN` clause, creating efficient CTEs can make a significant difference in query time and readability. 
+4. Skewed Dataset : This datasets are large enough to see skew, and it is right-skewed dataset. I realized that confirming if the dataset is skewed at the beginning of the analysis helps in choosing the correct statical functions to use.
 
 # Closing Thoughts
-- Through the IMDb dataset, I learned that SQL is powerful with functions like `JOIN` and `GROUP BY`. CTEs are also very useful for conducting complex analyses.
-- For quicker query results, I used the `LIMIT` function. With large datasets, the `LIMIT` function is key to speeding up the analysis.
-`Psycopg2` was convenient for bringing SQL queries into Python. By doing so, it was easy to visualize the analysis results. Also it helped to explore dataset in python.
-- Additionally, having a detailed analysis plan is one of the most important steps in the whole process. After reviewing the dataset, I planned which analyses I like to continue with and then altered tables accordingly. Dropping unnecessary data made the queries faster and more readable.
+- Through the IMDb dataset, I learned that SQL is powerful with functions like `JOIN` and `GROUP BY`. 
+CTEs are also very useful for conducting complex analyses.
+- For quicker query results, I used the `LIMIT` function.
+ With large datasets, the `LIMIT` function is key to speeding up the analysis.
+`Psycopg2` was convenient for bringing SQL queries into Python. 
+By doing so, it was easy to visualize the analysis results. 
+Also it helped to explore dataset in python.
+- Additionally, having a detailed analysis plan is one of the most important steps in the whole process. 
+After reviewing the dataset, I planned which analyses I like to continue with and then altered tables accordingly. 
+Dropping unnecessary data made the queries faster and more readable.
 
 
