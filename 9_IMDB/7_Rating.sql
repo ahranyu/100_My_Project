@@ -5,6 +5,7 @@
 - Top-rated movies by year
 - Top-rated movies by decade
 - Worst movies by year
+- Most rated movies : Explore rating and vote numbers
 
 */
 

@@ -22,11 +22,13 @@ FROM title_crew_alter
 INNER JOIN title_rating_alter ON title_crew_alter.title_id= title_rating_alter.title_id
 WHERE votes_num> 3630
 )
-SELECT  ROUND(AVG(avg_rating),2) AS avg_movies_rate, primary_name AS director_name,count(director_explode) AS movie_count
+SELECT  ROUND(AVG(avg_rating),2) AS avg_movies_rate, 
+        primary_name AS director_name,
+        COUNT(director_explode) AS movie_count
 FROM director_table
 LEFT JOIN name_basics ON director_table.director_explode=name_basics.name_id
 GROUP BY primary_name
-HAVING count(director_explode) >5
+HAVING COUNT(director_explode) >5
 ORDER BY avg_movies_rate DESC
 LIMIT 50;
 

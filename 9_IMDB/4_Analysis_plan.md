@@ -18,7 +18,6 @@
 - Top-rated movies by decade
 - Worst movies by year
 
-
 ### 3. Genre
 - Top movies by genre
 - Genre distribution by year

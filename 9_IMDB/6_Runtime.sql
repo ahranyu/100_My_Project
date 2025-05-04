@@ -34,7 +34,7 @@ Grouped movies by year and calculated the average runtime for each year
 */
 
 SELECT start_year,
-       ROUND(AVG(runtime_min),2) AS avg_runtime
+       percentile_cont(0.5) WITHIN GROUP (ORDER BY runtime_min) AS avg_runtime
 FROM title_basics
 WHERE runtime_min IS NOT NULL
 GROUP BY start_year
@@ -58,6 +58,6 @@ INNER JOIN title_rating_alter ON title_basics.title_id = title_rating_alter.titl
 WHERE runtime_min IS NOT NULL AND (title_rating_alter.votes_num >3630)
 )
 
-SELECT runtime_min, ROUND(AVG(avg_rating),2) AS average_rating 
+SELECT runtime_min, percentile_cont(0.5) WITHIN GROUP(ORDER BY avg_rating) AS average_rating 
 FROM runtime_rating
 GROUP BY runtime_min
