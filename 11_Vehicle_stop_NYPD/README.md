@@ -24,6 +24,7 @@ The results can be used to improve the accuracy of vehicle stops in New York and
 ## Tools I Used
 
 **Python:**
+
 I used `pandas` for data manipulation, `matplotlib` and `seaborn` for visualization.
 The analysis was conducted in Visual Studio Code and synced to this GitHub repository.
 
@@ -47,10 +48,13 @@ df['hour']=pd.to_datetime(df['OCCUR_TM'], format='%H:%M:%S').dt.hour
 ```
 From original dataset, I changed data type to datetime, and created new columns as `date` and `hour`.
 
+
+-----------------------------------------------------------
 ### 1. Time Analysis
 #### Is there a specific time when vehicles are most likely to be stopped?
 
 - **Monthly Stop Trend:**
+
 	Counted the new column `date` using `value_counts` and displayed the total stop count as a line chart using `rolling` function for a 30-day average.
 
 ``` python
@@ -73,6 +77,7 @@ plt.show()
 
 Vehicle stops have increased since January 2023, currently 3000 stops per month which is double the number from 2023.
 
+----------------------------------------------------
 - **Hourly Stop Distribution:**
 	Extracted `hour` from `OCCUR_TM`, utilized `displot` and displayed the result as an hourly distribution.
 
@@ -93,6 +98,7 @@ plt.gca().xaxis.set_major_locator(ticker.MultipleLocator(2))
 
 Vehicle stops occur mostly during commuting hours and evenings till midnight.
 
+----------------------------------------------------
 ### 2. Demographics and Flags
 #### Are certain demographics more likely to be stopped?
 
@@ -118,6 +124,7 @@ plt.show()
 
 Male has most proportion with over 80%.
 
+----------------------------------------------------
 - **Stopped by Race :**
 
 Calculated the percentage of stops per race and displayed the top 4 races using a horizontal bar chart.
@@ -144,6 +151,7 @@ plt.show()
 
 Black and Hispanic drivers make up most of the stops, with a combined proportion of 60%.
 
+----------------------------------------------------
 - **Stopped by Vehicle Category :**
 
 Counted the number of stops per vehicle category and displayed the result using a horizontal bar chart.
@@ -173,6 +181,8 @@ plt.show()
 
 Car/ SUV category is the most commonly stopped, nearly 90% of stops.
 
+
+----------------------------------------------------
 - **Stopped by Age :**
 
 Removed `UNKNOWN` values in the age column, transformed it to numeric values. Visualized a histogram of the driver's age distribution.
@@ -199,6 +209,7 @@ plt.gca().xaxis.set_major_locator(ticker.MultipleLocator(10))
 
 Majority of vehicle drivers are between 20 and 70 years old drivers.
 
+----------------------------------------------------
 #### What are the 'True' rate of flags?
 
 - **'True' Rate for Each Flag :**
@@ -234,6 +245,7 @@ plt.show()
 Summons have been issued to nearly 60% of drivers, Arrest rates are 3% and Force Used rate is 0.1%.
 This suggests that lighter issues such as issuing tickets, are more common for stopped vehicle, and there are less severe issues.
 
+----------------------------------------------------
 ### 3. Precinct 
 #### Which precincts have the highest number of True flag vehicle stops?
 
@@ -259,6 +271,8 @@ plt.gca().xaxis.set_major_formatter(FuncFormatter(lambda x, pos : f'{(x/1000):.0
 
 *A box plot of stop count per precinct*
 
+
+----------------------------------------------------
 **Insight**
 
 Precinct 75 has the highest stop count, with nearly 50,000 vehicle stops in the last 2 years.
@@ -271,14 +285,20 @@ Precinct 22 has the lowest at about 3,000 stops.
 
 *Force Used Rates per Precinct*
 
+
+----------------------------------------------------
 ![Arrest Rates per Precinct](image/arrest.png)
 
 *Arrest Rates per Precinct*
 
+
+----------------------------------------------------
 ![Summon Issued Rates per Precinct](image/summon_issued.png)
 
 *Summon Issued Rates per Precinct*
 
+
+----------------------------------------------------
 **Insight**
 
 While the overall Force Used rate is low (under 1%),
