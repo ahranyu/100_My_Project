@@ -272,12 +272,13 @@ plt.gca().xaxis.set_major_formatter(FuncFormatter(lambda x, pos : f'{(x/1000):.0
 *A box plot of stop count per precinct*
 
 
-----------------------------------------------------
 **Insight**
 
 Precinct 75 has the highest stop count, with nearly 50,000 vehicle stops in the last 2 years.
 Precinct 22 has the lowest at about 3,000 stops.
 
+
+----------------------------------------------------
 - **True Rates per each Flag :**
 	Counted the number of stops and calculated the `True` flag rates per each flag, displayed the distribution using a box chart.
 
