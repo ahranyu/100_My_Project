@@ -331,20 +331,20 @@ Additionally, Precinct 22 has 90% of Summon Issue rates, so speed cameras or oth
 To compare each flag across demographics, I chose to normalize the data for validity. 
 
 **Visualization :**
-I used various chart types to visualize the distribution and ensured the data was presented clearly. For example, I employed pie chart for gender, histogram for age, density plot for hourly, horizontal bar chart for race and gender, box plot to identify outliners.
+I used various chart types to visualize the distribution and ensured the data was presented clearly. For example, I employed pie chart for gender, histogram for age, density plot for hourly, horizontal bar chart for race and gender, box plot to identify outliers.
 
 **Depth in Analysis :**
 With many of data available, it was essential to stick to the original goals in order to avoid getting lost in the analysis.
 
 ## What I learned
 **Usage of Various Charts :**
-Conducting this project taught me the value of choosing the right chart to represent data clearly. For example, I learned which charts is best to show median values, actual counts or outliners. 
+Conducting this project taught me the value of choosing the right chart to represent data clearly. For example, I learned which charts is best to show median values, actual counts or outliers. 
 
 **Leading Meaningful Insight :**
 By setting actionable goals from the start, I was able to extract valuable insights from the massive data. This plan helped me to not to lost in the dataset and also I step forward as an analyst.
 
 ## Conclusion
-Throughout Vehicle Stop analysis of the NYPD dataset, I gained experience in data visualization and statistical knowledge. I learned when to normalize data, identify outliners, combine results to extract meaningful insights to support decision-making.
+Throughout Vehicle Stop analysis of the NYPD dataset, I gained experience in data visualization and statistical knowledge. I learned when to normalize data, identify outliers, combine results to extract meaningful insights to support decision-making.
 From this dataset, I revealed Precinct 75 has most vehicle stop and Precinct 46 has the highest rates of arrest and force use on drivers. Beyond that, I have visualized which demographic has been summon issued, arrested and force used by police per specific precincts.
 
 
