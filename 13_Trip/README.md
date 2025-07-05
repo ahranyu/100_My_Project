@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Travel Cities Dashboard
 
 ![Dashboard](image/dashboard.mp4)
@@ -48,4 +49,10 @@ Throughout this project, I learned data handling and visualisation using Power B
 
 This World Wide Travel City Dashboard provide a quick overview of the selected city including budget level, ideal duration, location and monthly temperature.
 By completing this dashboard, I enhanced my data handling skills with Power Query, specifically in data modeling and transformation. Additionally, I improved my visualisation skills by using various charts in Power BI. 
+=======
+
+
+
+https://github.com/user-attachments/assets/9e40e0ab-5327-45a8-8d0d-b837b7514841
+>>>>>>> 3ed81809b2dadea629bcf6dfa3fa26db6c1794c9
 
