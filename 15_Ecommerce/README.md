@@ -6,21 +6,22 @@ This dataset is based on real data from Brazilian E-commerce (Olist), including 
 
 With this dataset, I aim to gain insights into various aspects of the business and improve my technical skills, particularly in SQL, Python, and additionally linear regression.
 
-
+---------------
 Through out this project, I will focus on three key sections:
 
 **1. Customer Experience & Satisfaction**
 
-    Understand how delivery time impacts customer satisfaction, and how can improve customer experience.
+Understand how delivery time impacts customer satisfaction, and how can improve customer experience.
 
 **2. Delivery Performance**
 
-    Examine how delivery times and performance influence customer satisfaction and expectations.
+Examine how delivery times and performance influence customer satisfaction and expectations.
 
 **3. Sales & Revenue Trends**
 
-    Analyse the sales trends and predict future sales.
+Analyse the sales trends and predict future sales.
 
+-----------
 The result of analysis can help:
 - Increase positive review scores
 - Identify and enhance delivery performance
