@@ -372,6 +372,10 @@ By February 2019, the monthly order count is projected to reach nearly 10,000.
 **5. Order Volume Trends**\
    The order volume has been increasing, and by February 2019, the monthly order count is projected to reach nearly 10,000 orders. 
 
+# Challenge I Faced
+I observed a drop in review scores around 52 hours after the review request was sent. However, the main cause of this dip is unclear due to limited data.
+Next Steps: To investigate deeper, I would collect more data like sentiment analysis of review texts and return/exchange logs.
+
 
 # What I Learned
 
